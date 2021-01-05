@@ -1,0 +1,28 @@
+// Colors
+$grayish-blue: hsl(237, 18%, 59%);
+$soft-red: hsl(345, 95%, 68%);
+$white: hsl(0, 0%, 100%);
+$dark-desatured-blue: hsl(236, 21%, 26%);
+$very-dark-blue: hsl(235, 16%, 14%);
+$very-super-dark-blue: hsl(234, 17%, 12%);
+
+// Mobile
+@mixin mobile {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+// Reset
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+// Font
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@700&display=swap");
+body {
+  font-family: "Red Hat Text", sans-serif;
+  font-size: 0.875rem;
+}
