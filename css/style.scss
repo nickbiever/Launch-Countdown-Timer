@@ -4,7 +4,7 @@ $soft-red: hsl(345, 95%, 68%);
 $white: hsl(0, 0%, 100%);
 $dark-desatured-blue: hsl(236, 21%, 26%);
 $very-dark-blue: hsl(235, 16%, 14%);
-$very-super-dark-blue: hsl(234, 17%, 12%);
+$very-super-dark-blue: hsl(268, 21.1%, 13.9%);
 
 // Mobile
 @mixin mobile {
@@ -25,4 +25,42 @@ $very-super-dark-blue: hsl(234, 17%, 12%);
 body {
   font-family: "Red Hat Text", sans-serif;
   font-size: 0.875rem;
+}
+
+// Style
+body {
+  background-image: url(../images/bg-stars.svg);
+  background-repeat: no-repeat;
+  background-color: $very-super-dark-blue;
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+.hill-background {
+  background-image: url(../images/pattern-hills.svg);
+  background-repeat: no-repeat;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 25%;
+}
+
+.social-media {
+  position: fixed;
+  left: 50%;
+  bottom: 2.5em;
+  transform: translate(-50%, -50%);
+  margin: 0 auto;
+
+  svg {
+    margin: 0 1em;
+
+    path {
+      &:hover {
+        cursor: pointer;
+        fill: $soft-red;
+      }
+    }
+  }
 }
