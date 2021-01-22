@@ -11,18 +11,214 @@ body {
   font-size: 0.875rem;
 }
 
+h2 {
+  text-align: center;
+  color: white;
+  letter-spacing: 6px;
+}
+
+p {
+  letter-spacing: 4px;
+}
+
 body {
   background-image: url(../images/bg-stars.svg);
-  background-repeat: no-repeat;
+  background-size: cover;
   background-color: #231c2b;
   margin: 0;
   height: 100%;
   overflow: hidden;
 }
 
+.container {
+  margin-top: 10%;
+}
+
+@media (max-width: 768px) {
+  .container {
+    margin-top: 40%;
+  }
+}
+
+.card-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 690px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 768px) {
+  .card-row {
+    width: 90%;
+  }
+}
+
+.card-row .card {
+  text-align: center;
+  margin-top: 6rem;
+}
+
+.card-row .card .time {
+  position: relative;
+  width: 150px;
+  height: 125px;
+  -webkit-perspective: 200px;
+          perspective: 200px;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+}
+
+@media (max-width: 768px) {
+  .card-row .card .time {
+    width: 75px;
+    height: 62px;
+  }
+}
+
+.card-row .card .counter {
+  color: #fb6087;
+  display: block;
+  font-size: 6em;
+  overflow: hidden;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .card-row .card .counter {
+    font-size: 3em;
+  }
+}
+
+.card-row .card .card-top {
+  height: 50%;
+  line-height: 125px;
+  -webkit-transform-origin: 50% 100%;
+          transform-origin: 50% 100%;
+  border-radius: 10px 10px 0 0;
+  width: 100%;
+  border-bottom: 1px solid #231c2b;
+  background: radial-gradient(circle 5px at 150px 61px, #231c2b 0, #231c2b 5px, transparent 0), radial-gradient(circle 5px at 0 61px, #231c2b 0, #231c2b 5px, #2c2c44 0);
+}
+
+@media (max-width: 768px) {
+  .card-row .card .card-top {
+    line-height: 62px;
+    background: radial-gradient(circle 5px at 75px 30px, #231c2b 0, #231c2b 5px, transparent 0), radial-gradient(circle 5px at 0 30px, #231c2b 0, #231c2b 5px, #2c2c44 0);
+  }
+}
+
+.card-row .card .card-bottom {
+  line-height: 0;
+  height: 50%;
+  top: 50%;
+  -webkit-transform-origin: 50% 0;
+          transform-origin: 50% 0;
+  background-color: hotpink;
+  border-radius: 0 0 10px 10px;
+  background: radial-gradient(circle 5px at 150px 0, #1e1f29 0, #1e1f29 5px, transparent 0), radial-gradient(circle 5px at 0 0, #231c2b 0, #231c2b 5px, #333650 0);
+}
+
+@media (max-width: 768px) {
+  .card-row .card .card-bottom {
+    background: radial-gradient(circle 5px at 75px 0, #1e1f29 0, #1e1f29 5px, transparent 0), radial-gradient(circle 5px at 0 0, #231c2b 0, #231c2b 5px, #333650 0);
+  }
+}
+
+@-webkit-keyframes flipTop {
+  from {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+  }
+  to {
+    -webkit-transform: rotateX(-90deg);
+            transform: rotateX(-90deg);
+  }
+}
+
+@keyframes flipTop {
+  from {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+  }
+  to {
+    -webkit-transform: rotateX(-90deg);
+            transform: rotateX(-90deg);
+  }
+}
+
+@-webkit-keyframes flipBottom {
+  from {
+    -webkit-transform: rotateX(90deg);
+            transform: rotateX(90deg);
+  }
+  to {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+  }
+}
+
+@keyframes flipBottom {
+  from {
+    -webkit-transform: rotateX(90deg);
+            transform: rotateX(90deg);
+  }
+  to {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+  }
+}
+
+.card-row .card .flip-card-top {
+  -webkit-animation-name: flipTop;
+          animation-name: flipTop;
+  -webkit-animation-duration: 0.4s;
+          animation-duration: 0.4s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  z-index: 1;
+}
+
+.card-row .card .flip-card-bottom {
+  -webkit-animation-name: flipBottom;
+          animation-name: flipBottom;
+  -webkit-animation-duration: 0.4s;
+          animation-duration: 0.4s;
+  -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  z-index: 1;
+}
+
+.card-row .card p {
+  margin-top: 1rem;
+  color: #8486a9;
+}
+
+@media (max-width: 768px) {
+  .card-row .card p {
+    font-size: 0.5em;
+  }
+}
+
 .hill-background {
   background-image: url(../images/pattern-hills.svg);
-  background-repeat: no-repeat;
+  background-size: cover;
   position: fixed;
   bottom: 0;
   width: 100%;

@@ -27,19 +27,202 @@ body {
   font-size: 0.875rem;
 }
 
+h2 {
+  text-align: center;
+  color: $white;
+  letter-spacing: 6px;
+}
+
+p {
+  letter-spacing: 4px;
+}
+
 // Style
 body {
   background-image: url(../images/bg-stars.svg);
-  background-repeat: no-repeat;
+  background-size: cover;
   background-color: $very-super-dark-blue;
   margin: 0;
   height: 100%;
   overflow: hidden;
 }
 
+.container {
+  margin-top: 10%;
+
+  @include mobile {
+    margin-top: 40%;
+  }
+}
+
+.card-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 690px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include mobile {
+    width: 90%;
+  }
+
+  .card {
+    text-align: center;
+    margin-top: 6rem;
+
+    .time {
+      position: relative;
+      width: 150px;
+      height: 125px;
+      perspective: 200px;
+      backface-visibility: hidden;
+      transform: translateZ(0);
+      transform: translate3d(0, 0, 0);
+
+      @include mobile {
+        width: 75px;
+        height: 62px;
+      }
+    }
+
+    .counter {
+      color: $soft-red;
+      display: block;
+      font-size: 6em;
+      overflow: hidden;
+      position: absolute;
+      text-align: center;
+      top: 0;
+      width: 100%;
+
+      @include mobile {
+        font-size: 3em;
+      }
+    }
+
+    .card-top {
+      height: 50%;
+      line-height: 125px;
+      transform-origin: 50% 100%;
+      border-radius: 10px 10px 0 0;
+      width: 100%;
+      border-bottom: 1px solid $very-super-dark-blue;
+      background: radial-gradient(
+          circle 5px at 150px 61px,
+          $very-super-dark-blue 0,
+          $very-super-dark-blue 5px,
+          transparent 0
+        ),
+        radial-gradient(
+          circle 5px at 0 61px,
+          $very-super-dark-blue 0,
+          $very-super-dark-blue 5px,
+          #2c2c44 0
+        );
+
+      @include mobile {
+        line-height: 62px;
+
+        background: radial-gradient(
+            circle 5px at 75px 30px,
+            $very-super-dark-blue 0,
+            $very-super-dark-blue 5px,
+            transparent 0
+          ),
+          radial-gradient(
+            circle 5px at 0 30px,
+            $very-super-dark-blue 0,
+            $very-super-dark-blue 5px,
+            #2c2c44 0
+          );
+      }
+    }
+    .card-bottom {
+      line-height: 0;
+      height: 50%;
+      top: 50%;
+      transform-origin: 50% 0;
+      background-color: hotpink;
+      border-radius: 0 0 10px 10px;
+      background: radial-gradient(
+          circle 5px at 150px 0,
+          $very-dark-blue 0,
+          $very-dark-blue 5px,
+          transparent 0
+        ),
+        radial-gradient(
+          circle 5px at 0 0,
+          $very-super-dark-blue 0,
+          $very-super-dark-blue 5px,
+          #333650 0
+        );
+
+      @include mobile {
+        background: radial-gradient(
+            circle 5px at 75px 0,
+            $very-dark-blue 0,
+            $very-dark-blue 5px,
+            transparent 0
+          ),
+          radial-gradient(
+            circle 5px at 0 0,
+            $very-super-dark-blue 0,
+            $very-super-dark-blue 5px,
+            #333650 0
+          );
+      }
+    }
+
+    @keyframes flipTop {
+      from {
+        transform: rotateX(0deg);
+      }
+
+      to {
+        transform: rotateX(-90deg);
+      }
+    }
+
+    @keyframes flipBottom {
+      from {
+        transform: rotateX(90deg);
+      }
+
+      to {
+        transform: rotateX(0deg);
+      }
+    }
+
+    .flip-card-top {
+      animation-name: flipTop;
+      animation-duration: 0.4s;
+      animation-fill-mode: both;
+      z-index: 1;
+    }
+
+    .flip-card-bottom {
+      animation-name: flipBottom;
+      animation-duration: 0.4s;
+      animation-delay: 0.4s;
+      animation-fill-mode: both;
+      z-index: 1;
+    }
+
+    p {
+      margin-top: 1rem;
+      color: $grayish-blue;
+
+      @include mobile {
+        font-size: 0.5em;
+      }
+    }
+  }
+}
+
 .hill-background {
   background-image: url(../images/pattern-hills.svg);
-  background-repeat: no-repeat;
+  background-size: cover;
   position: fixed;
   bottom: 0;
   width: 100%;
